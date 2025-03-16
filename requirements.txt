@@ -1,0 +1,10 @@
+Flask 
+pandas 
+haversine 
+requests 
+streamlit
+Flask-SQLAlchemy
+Flask-Bcrypt
+scikit-learn
+psycopg2-binary
+flask_cors
