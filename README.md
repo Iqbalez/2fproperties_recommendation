@@ -1,4 +1,5 @@
 # Real Estate Recommender System
+![Architecture Diagram](https://github.com/user-attachments/assets/609d57c1-6ed8-43b6-ba21-8d1d73555b6e)
 
 ## Overview
 The Real Estate Recommender System is a web application designed to help users find suitable properties based on their preferences. The system utilizes a hybrid recommendation approach, combining content-based and collaborative filtering methods to provide personalized property suggestions.
