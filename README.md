@@ -23,28 +23,60 @@ The application is built using a Flask backend and a Streamlit frontend, with an
 - **Database**: SQLite
 - **Libraries**: Pandas for data manipulation
 
+Here's a README file format for your project with the updated installation instructions:
+
+```markdown
+# Real Estate Recommender
+
 ## Installation
-1. Clone the repository:
+
+### Using Docker
+
+1. **Install Docker** (if not already installed):
+   - **Windows/Mac**: Download from [Docker's website](https://www.docker.com/products/docker-desktop) and follow the instructions.
+   - **Linux**:
+     ```bash
+     sudo apt-get update
+     sudo apt-get install -y docker.io
+     ```
+
+2. **Clone the repository:**
    ```bash
    git clone https://github.com/yourusername/real-estate-recommender.git
    cd real-estate-recommender
    ```
 
-2. Install required packages:
+3. **Run with Docker:**
+   ```bash
+   docker-compose up
+   ```
+
+   Access the application at `http://localhost:8501`.
+
+### Without Docker
+
+If you prefer not to use Docker, you can run the application manually:
+
+1. **Install required packages:**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Run the Flask backend:
+2. **Run the Flask backend:**
    ```bash
    cd backend
    python server.py
    ```
 
-4. Run the Streamlit frontend:
+3. **Run the Streamlit frontend:**
    ```bash
    streamlit run app.py
    ```
+
+## Usage
+
+Once the application is running, you can access it via your web browser. The Streamlit frontend will provide a user-friendly interface for interacting with the real estate recommender.
+
 
 ## Usage
 1. Open the Streamlit application in your web browser.
