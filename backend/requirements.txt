@@ -6,3 +6,4 @@ Flask-Bcrypt
 psycopg2-binary
 flask_cors
 scikit-learn
+sentence-transformers
