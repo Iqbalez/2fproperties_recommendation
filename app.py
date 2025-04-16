@@ -13,8 +13,8 @@ if "user_id" not in st.session_state:
     st.session_state.user_id = None
 
 # Define the backend API URL
-# APP_URL = "https://real-estate-recommender-3vbi.onrender.com"
-APP_URL = "http://127.0.0.1:10000"
+APP_URL = "https://real-estate-recommender.onrender.com"
+# APP_URL = "http://127.0.0.1:10000"
 
 
 
