@@ -32,17 +32,17 @@ session = requests.Session()
 
 # User authentication
 def register(username, password):
-    response = session.post('https://real-estate-recommender.onrender.com/api/register', json={'username': username, 'password': password})
+    response = session.post('http://127.0.0.1:5000/api/register', json={'username': username, 'password': password})
     return response
 
 def login(username, password):
-    response = session.post('https://real-estate-recommender.onrender.com/api/login', json={'username': username, 'password': password})
+    response = session.post('http://127.0.0.1:5000/api/login', json={'username': username, 'password': password})
     if response.status_code == 200:
         st.session_state.user_id = username  # Store username in session
     return response
 
 def logout():
-    response = session.post('https://real-estate-recommender.onrender.com/api/logout')
+    response = session.post('http://127.0.0.1:5000/api/logout')
     if response.status_code == 200:
         st.session_state.user_id = None
         st.session_state.recommendations = []  # Clear recommendations on logout
@@ -103,7 +103,7 @@ if st.session_state.user_id is not None:
         if st.button("📤 Upload File"):
             file_bytes = uploaded_file.read()
             response = session.post(
-                'https://real-estate-recommender.onrender.com:5000/api/upload',
+                'http://127.0.0.1:5000/api/upload',
                 files={'file': (uploaded_file.name, file_bytes, 'text/csv')}
             )
 
@@ -151,7 +151,7 @@ if st.session_state.user_id is not None:
                 'min_school_rating': min_school_rating,
             }
 
-            response = session.post('https://real-estate-recommender.onrender.com/api/recommendations', json=user_profile)
+            response = session.post('http://127.0.0.1:5000/api/recommendations', json=user_profile)
 
             if response.status_code == 200:
                 st.session_state.recommendations = response.json()  # Store recommendations in session state
@@ -202,7 +202,7 @@ if st.session_state.user_id is not None:
                 if st.session_state.user_id is not None:
                     # Send feedback for this property
                     feedback_response = session.post(
-                        'https://real-estate-recommender.onrender.com/api/feedback',
+                        'http://127.0.0.1:5000/api/feedback',
                         json={'feedback': feedback, 'property_id': property_id, 
                              'user_id': st.session_state.user_id }
                     )
